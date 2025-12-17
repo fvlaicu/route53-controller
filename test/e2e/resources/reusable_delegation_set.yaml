@@ -1,0 +1,8 @@
+apiVersion: route53.services.k8s.aws/v1alpha1
+kind: ReusableDelegationSet
+metadata:
+  name: "$REUSABLE_DELEGATION_SET_NAME"
+spec:
+  callerReference: "$CALLER_REFERENCE"
+
+

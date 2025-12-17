@@ -5,3 +5,4 @@ resources:
   - bases/route53.services.k8s.aws_healthchecks.yaml
   - bases/route53.services.k8s.aws_hostedzones.yaml
   - bases/route53.services.k8s.aws_recordsets.yaml
+  - bases/route53.services.k8s.aws_reusabledelegationsets.yaml

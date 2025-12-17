@@ -12,6 +12,7 @@ rules:
   - healthchecks
   - hostedzones
   - recordsets
+  - reusabledelegationsets
   verbs:
   - create
   - delete
@@ -26,6 +27,7 @@ rules:
   - healthchecks
   - hostedzones
   - recordsets
+  - reusabledelegationsets
   verbs:
   - get
   - patch

@@ -12,7 +12,7 @@ ignore:
   # - HostedZone
   - KeySigningKey
   - QueryLoggingConfig
-  - ReusableDelegationSet
+  # - ReusableDelegationSet
   - TrafficPolicy
   - TrafficPolicyInstance
   - TrafficPolicyVersion
@@ -21,6 +21,7 @@ ignore:
   shape_names: null
 sdk_names:
   model_name: route-53
+  package_name: route53
 operations:
   ChangeResourceRecordSets:
     operation_type:
@@ -43,6 +44,14 @@ operations:
     output_wrapper_field_path: HealthCheck
   UpdateHealthCheck: 
     output_wrapper_field_path: HealthCheck
+  CreateReusableDelegationSet:
+    output_wrapper_field_path: DelegationSet
+    resource_name: ReusableDelegationSet
+  GetReusableDelegationSet:
+    output_wrapper_field_path: DelegationSet
+    resource_name: ReusableDelegationSet
+  DeleteReusableDelegationSet:
+    resource_name: ReusableDelegationSet
 prefix_config: {}
 resources:
   RecordSet:
@@ -237,3 +246,15 @@ resources:
         template_path: hooks/health_check/sdk_file_end.go.tpl
     update_operation:
       custom_method_name: customUpdateHealthCheck
+  ReusableDelegationSet:
+    renames:
+      operations:
+        CreateReusableDelegationSet:
+          output_wrapper_field_path: DelegationSet
+        GetReusableDelegationSet:
+          output_wrapper_field_path: DelegationSet
+    hooks:
+      sdk_create_post_set_output:
+        template_path: hooks/reusable_delegation_set/sdk_create_post_set_output.go.tpl
+    tags:
+      ignore: true

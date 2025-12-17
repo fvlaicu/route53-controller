@@ -12,6 +12,7 @@ rules:
   - healthchecks
   - hostedzones
   - recordsets
+  - reusabledelegationsets
   verbs:
   - get
   - list

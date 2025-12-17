@@ -42,6 +42,7 @@ import (
 	_ "github.com/aws-controllers-k8s/route53-controller/pkg/resource/health_check"
 	_ "github.com/aws-controllers-k8s/route53-controller/pkg/resource/hosted_zone"
 	_ "github.com/aws-controllers-k8s/route53-controller/pkg/resource/record_set"
+	_ "github.com/aws-controllers-k8s/route53-controller/pkg/resource/reusable_delegation_set"
 
 	"github.com/aws-controllers-k8s/route53-controller/pkg/version"
 )
